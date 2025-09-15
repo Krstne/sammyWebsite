@@ -38,6 +38,36 @@ body {
     opacity: 0.9;
 }
 
+/* Header search bar */
+.search-bar {
+    margin: 1rem auto 0;
+    max-width: 520px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255,255,255,0.15);
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 999px;
+    padding: 0.4rem 0.9rem;
+}
+
+.search-bar i {
+    color: white;
+}
+
+.search-bar input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1rem;
+}
+
+.search-bar input::placeholder {
+    color: rgba(255,255,255,0.85);
+}
+
 /* Main content */
 .main {
     padding: 3rem 0;
@@ -294,4 +324,79 @@ body {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+/* Modal styles */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.modal {
+    width: 100%;
+    max-width: 520px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    padding: 1.25rem 1.25rem 1rem;
+}
+
+.modal-title {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.modal-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+}
+
+.modal-field {
+    display: grid;
+    gap: 0.35rem;
+    font-size: 0.95rem;
+}
+
+.modal-field span {
+    color: #555;
+    font-weight: 600;
+}
+
+.modal-field input {
+    padding: 0.65rem 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.btn {
+    padding: 0.55rem 0.9rem;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+}
+
+.btn-secondary {
+    background: #edf2f7;
+    color: #334155;
 }
