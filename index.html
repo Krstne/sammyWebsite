@@ -21,8 +21,109 @@
 
     <main class="main">
         <div class="container">
-            <div class="catalog-grid" id="catalogGrid">
-                <!-- Product cards will be dynamically generated here -->
+            <!-- Tab Navigation -->
+            <div class="tab-navigation">
+                <button class="tab-btn active" data-tab="catalog">
+                    <i class="fas fa-th-large"></i>
+                    Product Catalog
+                </button>
+                <button class="tab-btn" data-tab="shopping">
+                    <i class="fas fa-shopping-bag"></i>
+                    Add to Cart
+                </button>
+                <button class="tab-btn" data-tab="cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    Shopping Cart
+                </button>
+                <button class="tab-btn" data-tab="quotation">
+                    <i class="fas fa-file-invoice"></i>
+                    Quotation
+                </button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content">
+                <!-- Catalog Tab -->
+                <div class="tab-pane active" id="catalog-tab">
+                    <!-- Filter Controls -->
+                    <div class="filter-container">
+                        <div class="filter-section">
+                            <h3><i class="fas fa-filter"></i> Filter Products</h3>
+                            <div class="filter-controls">
+                                <div class="filter-group">
+                                    <label for="brandFilter">Brand:</label>
+                                    <select id="brandFilter" class="filter-select">
+                                        <option value="">All Brands</option>
+                                    </select>
+                                </div>
+                                <div class="filter-group">
+                                    <label for="weightFilter">Weight:</label>
+                                    <select id="weightFilter" class="filter-select">
+                                        <option value="">All Weights</option>
+                                    </select>
+                                </div>
+                                <div class="filter-group">
+                                    <label for="priceRange">Price Range:</label>
+                                    <select id="priceRange" class="filter-select">
+                                        <option value="">All Prices</option>
+                                        <option value="0-500">Under ₱500</option>
+                                        <option value="500-1000">₱500 - ₱1,000</option>
+                                        <option value="1000-2000">₱1,000 - ₱2,000</option>
+                                        <option value="2000-5000">₱2,000 - ₱5,000</option>
+                                        <option value="5000+">Above ₱5,000</option>
+                                    </select>
+                                </div>
+                                <div class="filter-group">
+                                    <button id="clearFilters" class="btn btn-secondary">
+                                        <i class="fas fa-times"></i> Clear Filters
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="catalog-grid" id="catalogGrid">
+                        <!-- Product cards will be dynamically generated here -->
+                    </div>
+                </div>
+
+                <!-- Shopping Tab -->
+                <div class="tab-pane" id="shopping-tab">
+                    <div class="shopping-container">
+                        <h2><i class="fas fa-shopping-bag"></i> Add Items to Cart</h2>
+                        <p>Select quantities for the products you want to purchase.</p>
+                        <div class="catalog-grid" id="shoppingGrid">
+                            <!-- Shopping product cards will be dynamically generated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cart Tab -->
+                <div class="tab-pane" id="cart-tab">
+                    <div class="cart-container">
+                        <h2><i class="fas fa-shopping-cart"></i> Shopping Cart</h2>
+                        <div class="cart-items" id="cartItems">
+                            <!-- Cart items will be displayed here -->
+                        </div>
+                        <div class="cart-summary" id="cartSummary">
+                            <!-- Cart summary will be displayed here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quotation Tab -->
+                <div class="tab-pane" id="quotation-tab">
+                    <div class="quotation-container">
+                        <h2><i class="fas fa-file-invoice"></i> Generate Quotation</h2>
+                        <div class="quotation-info">
+                            <p>Review your selected items and generate a professional quotation PDF.</p>
+                            <button class="btn btn-primary" id="generateQuotationBtn">
+                                <i class="fas fa-file-pdf"></i>
+                                Generate Quotation PDF
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
